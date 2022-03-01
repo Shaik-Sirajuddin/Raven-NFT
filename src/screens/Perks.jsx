@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 export default class Perks extends Component {
     render() {
         return <div className="section padding-top-bottom-big" id="roadmap">

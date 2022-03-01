@@ -7,7 +7,7 @@ export default class Header extends Component {
                 <div className="row">
                     <div className="col-12">
                         <nav className="navbar navbar-expand-lg navbar-light bg-light mx-lg-0">
-                            <a className="navbar-brand" href=""><img src="./text_logo.png" alt="" width="100" height="40" /></a>
+                            <a className="navbar-brand" href=""><img src="./text_logo.png" alt="" width="100" height="40"/></a>
                             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon">
                                     <span className="menu-icon__line menu-icon__line-left"></span>
@@ -19,22 +19,22 @@ export default class Header extends Component {
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav ml-auto">
                                     <li className="nav-item">
-                                        <Link style={{ textDecoration: 'none' }} to='/mint' ><a className="nav-link" href="#app" data-ps2id-offset="120">Mint</a></Link>
+                                        <Link style={{ textDecoration: 'none' }} to='/mint'><a className="nav-link" href="#app" data-ps2id-offset="120">Mint</a></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link style={{ textDecoration: 'none' }} to='/lore' ><a className="nav-link" href="#app" data-ps2id-offset="120">Lore</a></Link>
+                                        <Link style={{ textDecoration: 'none' }} to='/lore'><a className="nav-link" href="#app" data-ps2id-offset="120">Lore</a></Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link style={{ textDecoration: 'none' }} to='/pre' ><a className="nav-link" href="#app" data-ps2id-offset="120">pre-sale</a></Link>
+                                        <Link style={{ textDecoration: 'none' }} to='/pre'><a className="nav-link" href="#app" data-ps2id-offset="120">pre-sale</a></Link>
                                     </li>
                                     {/* <li className="nav-item">
-                                    <Link style={{ textDecoration: 'none' }} to='/#roadmap' ><a className="nav-link" href="#app" data-ps2id-offset="120">Roadmap</a></Link>
-                                </li> */}
+            <Link style={{ textDecoration: 'none' }} to='/#roadmap' ><a className="nav-link" href="#app" data-ps2id-offset="120">Roadmap</a></Link>
+        </li> */}
                                     <li className="nav-item">
                                         <Link to='/rarity' style={{ textDecoration: 'none' }}><a className="nav-link">Rarity-Checker</a></Link>
                                     </li>
                                     <li>
-                                        <Link style={{ textDecoration: 'none' }} to='/#faq' ><a className="nav-link" href="#app" data-ps2id-offset="120">Faq</a></Link>
+                                        <Link style={{ textDecoration: 'none' }} to='/#faq'><a className="nav-link" href="#app" data-ps2id-offset="120">Faq</a></Link>
                                     </li>
                                     <li className="nav-link">
 

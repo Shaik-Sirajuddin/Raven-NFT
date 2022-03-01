@@ -2,7 +2,7 @@
 
 .loader svg path,
 .loader svg rect{
-	fill: #F11723;
+	fill: purple;
 }
 .hero-center-wrap p span.font-big-color,
 .countdown li,
@@ -22,26 +22,26 @@
 .nav-item ul li a.active-subnav,
 .menu-back.dark .nav-item ul li a.active-subnav,
 .menu-back.dark .nav-item ul li a:hover{
-	color: #F11723;
+	color: purple;
 }
 .menu-back.dark .nav-link:hover,  
 .menu-back.dark .nav-link:active,
 .nav-link:hover,  
 .nav-link:active {
-	color: #F11723 !important;
-	border-color: #F11723 !important; 
+	color: purple !important;
+	border-color: purple !important; 
 }
 .nav-link.mPS2id-highlight,
 .menu-back.dark .nav-link.mPS2id-highlight{
-	color: #F11723 !important;
-	border-color: #F11723 !important; 
+	color: purple !important;
+	border-color: purple !important; 
 }
 .color-pr{
-	color: #F11723 !important;
+	color: purple !important;
 }
 .btn-primary.table-ver:active,
 .btn-primary.table-ver:focus{
-	color: #F11723 !important;
+	color: purple !important;
 }
 .hero-center-wrap p span.back-color,
 .btn-primary,
@@ -63,17 +63,17 @@
 input.btn.btn-primary,
 .prev-roadmap.dark,
 .next-roadmap.dark{
-	background-color: #F11723 !important;
+	background-color: purple !important;
 }
 .table-sale.future-price .table-line,
 .nav-item:hover ul,
 .roadmap-box:after,
 .accordion-style .card-header a{
-	border-color: #F11723;
+	border-color: purple;
 }
 .btn-primary:focus,
 .btn-primary:active{
-	background-color: #F11723 !important;
+	background-color: purple !important;
 }
 .countdown li {
 	box-shadow: 0 8px 40px -6px rgba(123, 94, 234, 0.2); 
@@ -101,10 +101,10 @@ input.btn.btn-primary,
 	box-shadow: 0 8px 45px -6px rgba(123, 94, 234, 0.3);
 }
 .roadmap-box:before{
-	background: linear-gradient(#F11723, #fff);
+	background: linear-gradient(purple, #fff);
 }
 .item.dark .roadmap-box:before{
-	background: linear-gradient(#F11723, #0e0529) !important;
+	background: linear-gradient(purple, #0e0529) !important;
 }
 .form-control{
 	background-color: rgba(123, 94, 234, 0.08);
@@ -123,19 +123,19 @@ input.btn.btn-primary,
 .scene path:nth-child(5),
 .scene path:nth-child(6),
 .scene path:nth-child(7) {
-	fill: #F11723;
+	fill: purple;
 }
 figure.vimeo a:before, figure.youtube a:before {
-	border-left: 10px solid #F11723;
+	border-left: 10px solid purple;
 }
 figure.vimeo:hover a:after, figure.youtube:hover a:after {
-	background:#F11723;
+	background:purple;
 }
 ::selection {
-	background-color: #F11723;
+	background-color: purple;
 }
 ::-moz-selection {
-	background-color: #F11723;
+	background-color: purple;
 }
 @media (max-width: 991px) { 
 	.nav-link:hover,  
