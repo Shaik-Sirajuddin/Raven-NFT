@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './footer.css';
+import { discordLink,twitterLink } from '../other/links';
 export default class Footer extends Component {
     render() {
         return <div>
@@ -11,8 +12,8 @@ export default class Footer extends Component {
 								<p>Copyright © 2022,  <a href="#">Raven NFT</a></p>
 							</div>
 							<div className="col-lg-6 footer mt-4 mr-auto mt-lg-0 mr-lg-0 text-center text-lg-right">
-								<a className="app-btn mx-2 mr-lg-3" target="_blank" href="#"><i className="fa fa-twitter"></i></a>
-								<a className="app-btn mx-2 mr-lg-3" target="_blank" href="#"><i className="fab fa-discord"></i></a>
+								<a className="app-btn mx-2 mr-lg-3" target="_blank" href={twitterLink}><i className="fa fa-twitter"></i></a>
+								<a className="app-btn mx-2 mr-lg-3" target="_blank" href={discordLink}><i className="fab fa-discord"></i></a>
 								<a className="app-btn mx-2 mr-lg-3" target="_blank" href="#"><i className="fa fa-instagram"></i></a>
 							</div>
 						</div>

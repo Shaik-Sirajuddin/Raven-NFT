@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import { discordLink, twitterLink } from "../other/links";
 import './Header.css'
 export default class MainPageHeader extends Component {
     render() {
@@ -30,10 +31,10 @@ export default class MainPageHeader extends Component {
             </li>         
                              <li className="nav-link">
 
-                                            <a className="app-btn mx-2 mr-lg-3" target="_blank" href="#"><i className="fa fa-twitter"></i></a>
+                                            <a className="app-btn mx-2 mr-lg-3" target="_blank" href={twitterLink}><i className="fa fa-twitter"></i></a>
                                         </li>
                                         <li className="nav-link">
-                                            <a className="app-btn mx-2 mr-lg-3" target="_blank" href="#"><i className="fab fa-discord"></i></a>
+                                            <a className="app-btn mx-2 mr-lg-3" target="_blank" href={discordLink}><i className="fab fa-discord"></i></a>
 
                                         </li>
                                         <li className="nav-link">
@@ -46,6 +47,6 @@ export default class MainPageHeader extends Component {
                 </div>
             </div>
         </div>
-    </div>;
+    </div>
     }
 }
