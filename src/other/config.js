@@ -1,6 +1,5 @@
-export const contractAddress = "0xf2c19933073359752fd7b9ca9cbbaa844d09ccb0"
-export let networkId = ""
-export const requiredId = ""
+export const contractAddress = "0x3c6127cf0139E811e9Af7afd1cB21e942ccF2ee0"
+export const requiredId = 4
 export const contractABI = [
 	{
 		"inputs": [],
@@ -147,6 +146,11 @@ export const contractABI = [
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "_code",
+				"type": "uint256"
+			},
+			{
 				"internalType": "address",
 				"name": "_user",
 				"type": "address"
@@ -289,6 +293,11 @@ export const contractABI = [
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
@@ -372,6 +381,29 @@ export const contractABI = [
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "presaleMint",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
@@ -424,6 +456,13 @@ export const contractABI = [
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "removeMyPresale",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -575,6 +614,19 @@ export const contractABI = [
 			}
 		],
 		"name": "setMintCost",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_code",
+				"type": "uint256"
+			}
+		],
+		"name": "setNewCode",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"

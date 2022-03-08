@@ -178,7 +178,7 @@ export default class Roadmap extends Component {
                         </div>
                     </div>
                     <div className="col-md-6 offset-md-1 align-self-center">
-                        <h4 className="text-white">What more</h4>
+                        <h4 className="text-white"></h4>
                         <p className="text-grey ul" >
                         <ul>
                         <li>Acquire First Private Property</li>
@@ -204,7 +204,7 @@ export default class Roadmap extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 align-self-center">
-                        <h4 className="text-white">More coming</h4>
+                        <h4 className="text-white"></h4>
                         <p className="lead text-grey">
                         <ul>
                                <li>

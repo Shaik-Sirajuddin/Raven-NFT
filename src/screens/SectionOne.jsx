@@ -28,7 +28,7 @@ export default class SectionOne extends Component {
                               
                               showStatus={false} 
                               showArrows={false}>
-                                <div className='image-logo'>
+                                <div className='image-logo' style={{ backgroundImage: `url(${require("./banner.jpg")})` }} >
                                     <img className='rounded' src="./images/logo.png"/>
                                 </div>
                             </Carousel>

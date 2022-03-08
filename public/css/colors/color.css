@@ -108,6 +108,8 @@ input.btn.btn-primary,
 }
 .form-control{
 	background-color: rgba(123, 94, 234, 0.08);
+	color: white;
+	font-size: 16px;
 }
 .suscribe .form-control{
 	background-color: rgba(123, 94, 234, 0.28);

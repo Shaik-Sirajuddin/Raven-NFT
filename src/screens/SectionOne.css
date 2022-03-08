@@ -1,3 +1,4 @@
+
 .text-myblack{
   color: #171A20;
 }
@@ -14,12 +15,12 @@
     margin: 20px;
     min-height: 90%;
     min-width: 90%;
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFl5F4qCRLqZNxEUZOgb3VUzcmPSav_faHPJSngxVw3H5s_IhZYCjl3_pvX9V6WFEY1Lo&usqp=CAU);
-    background: url(https://img.freepik.com/free-photo/studio-background-concept-abstract-empty-light-gradient-purple-studio-room-background-product_1258-54682.jpg);
-    /* background: url(https://media.istockphoto.com/photos/abstract-red-gradient-color-background-christmas-valentine-wallpaper-picture-id1054309772?b=1&k=20&m=1054309772&s=170667a&w=0&h=M0pcgbt-OnVYThgYLgNvbkT-9YZ0RkvMk2glB8QZY9Y=); */
+    /* background: url(https://img.freepik.com/free-photo/studio-background-concept-abstract-empty-light-gradient-purple-studio-room-background-product_1258-54682.jpg); */
+    /* background-image: url("./banner.jpg"); */
     background-position: center center;
     background-repeat: no-repeat;
-    background-size:  cover;          
+    background-size:  contain;
+    background-position-y: top;          
     padding: 40px;
     border-radius: 20px;
 }

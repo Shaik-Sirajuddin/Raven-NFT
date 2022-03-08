@@ -3,9 +3,9 @@
 ================================================== */
 
 body{
-	font-family: 'Marvel', sans-serif  !important;
+	font-family: Poppins, sans-serif !important;
 	font-weight:400;
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 23px;
 	color: #535353;
 	overflow-x: hidden;
@@ -381,9 +381,8 @@ mark{
 .nav-link:focus, 
 .nav-link:active {
 	opacity: 1;
-	font-weight: 500;
-	font-size: 22px;
-
+	font-weight: 400;
+	font-size: 18px;
 	text-transform: uppercase;
 }
 .nav-link, 
@@ -749,6 +748,7 @@ mark{
 	opacity: 1; 
 }
 .btn span{
+	font-size: 16px;
 	position: relative;
 	display: block;
     -webkit-transition: all 250ms linear;
@@ -2137,6 +2137,11 @@ input.btn.btn-primary{
 		font-weight: 700;
 		text-shadow: 1px 4px 3px rgba(0,0,0,0.06);
 	}	
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #414654;
+    border-color: #6c757d;
 }
 
 
