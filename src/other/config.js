@@ -1,8 +1,14 @@
-export const contractAddress = "0x3c6127cf0139E811e9Af7afd1cB21e942ccF2ee0"
-export const requiredId = 4
+export const contractAddress = "0x474358d08c681627181b9B310722Cc8f6AaD7159"
+export const requiredId = 1
 export const contractABI = [
 	{
-		"inputs": [],
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_code",
+				"type": "uint256"
+			}
+		],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
 	},
