@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
-import { discordLink, twitterLink } from "../other/links";
+import { discordLink, instaLink, twitterLink } from "../other/links";
 import './Header.css'
 export default class Header extends Component {
     render() {
@@ -39,7 +39,7 @@ export default class Header extends Component {
 
                                         </li>
                                         <li className="nav-link">
-                                            <a className="app-btn mx-2 mr-lg-3" target="_blank" href="#"><i className="fa fa-instagram"></i></a>
+                                            <a className="app-btn mx-2 mr-lg-3" target="_blank" href={instaLink}><i className="fa fa-instagram"></i></a>
 
                                         </li>
                             </ul>

@@ -24,3 +24,18 @@
     padding: 40px;
     border-radius: 20px;
 }
+#landingImage{
+    position: relative;
+    top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80% ;
+}
+#platformImg{
+    position: relative;
+    top: 80px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}

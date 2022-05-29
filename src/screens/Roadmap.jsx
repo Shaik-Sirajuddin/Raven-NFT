@@ -12,7 +12,7 @@ export default class Roadmap extends Component {
             transform:" translateY(-50%)",
             margin: "auto"
             };
-        return <div className="section padding-top-bottom-big background-gradient-dark" id="roadmap">
+        return <div className="section padding-top-bottom-big bg-d" id="roadmap">
 			
 			<div className="container">
                      <div className="col-md-12">

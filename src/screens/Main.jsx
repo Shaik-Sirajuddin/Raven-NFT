@@ -7,6 +7,7 @@ import SectionTwo from './SectionTwo';
 import Perks from './Perks';
 import MainPageHeader from './MainPageHeader';
 import { useRef } from 'react';
+import Testimonial from './Testimonial';
 export default class Main extends Component {
     render() {
        
@@ -14,6 +15,7 @@ export default class Main extends Component {
       <MainPageHeader />
       <SectionOne />
       <SectionTwo />
+      <Testimonial/>
       <Roadmap/>
       <Footer />
     </div>;

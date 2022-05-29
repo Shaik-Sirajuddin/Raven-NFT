@@ -130,7 +130,7 @@ export default class Register extends React.Component {
         return (<div>
 
             <RegisterHeader />
-            <div className="section full-height height-auto-lg hide-over background-dark-blue-3 ">
+            <div className="section full-height height-auto-lg hide-over bg-d- ">
                 <div className="hero-center-wrap relative-on-lg">
                     <div className="container">
                         <div className="row">
