@@ -1,0 +1,33 @@
+div#banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:#11bfa5;
+    color: white;
+    width: 100%;
+    z-index: 5000;
+    height: 40px;
+    overflow: hidden;
+}
+
+#banner-content {
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.glow {
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #007bff, 0 0 40px #007bff, 0 0 50px #007bff, 0 0 60px #007bff, 0 0 70px #007bff;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px rgb(17, 14, 89), 0 0 40px rgb(17, 14, 89), 0 0 50px rgb(17, 14, 89), 0 0 60px rgb(17, 14, 89), 0 0 70px rgb(17, 14, 89), 0 0 80px rgb(17, 14, 89);
+    }
+}

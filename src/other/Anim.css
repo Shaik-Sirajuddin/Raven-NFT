@@ -1,6 +1,6 @@
 body {
-    background: #0c0e22;
-    font-family: "Montserrat", sans-serif;
+    background: #160021;
+    /* font-family: "Montserrat", sans-serif; */
     color: rgb(53, 53, 53);
   }
   
@@ -8,14 +8,12 @@ body {
     font-size: 8em;
     color: rgb(255, 255, 255);
     text-align: center;
-    font-family: "Bebas Neue", sans-serif;
+    /* font-family: "Bebas Neue", sans-serif; */
   }
   
   h3 {
     padding-top: 0.25em;
   }
-  
-  
 
   .vertical-timeline-element-content {
     background-color: rgb(255, 255, 255);
@@ -64,4 +62,20 @@ body {
       margin-top: 1.5em;
     }
   }
-  
+
+  /* .animate{
+    animation-name: downtoup;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+   
+  }
+  @keyframes downtoup {
+     from{
+       position: relative;
+       top: 100px;
+     }
+     to{
+       top: 0px;
+     }
+  }
+   */

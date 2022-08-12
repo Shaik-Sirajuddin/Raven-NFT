@@ -8,6 +8,8 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header2 from './Header2';
 import { getTransactionReceiptMined } from '../other/helper';
+import Banner from './banner';
+import Footer from './Footer';
 toast.configure();
 
 export default class Mint extends Component {
@@ -36,15 +38,15 @@ export default class Mint extends Component {
             validNetwork: true
         }
         if (this.isMetamaskAvailable()) {
-            const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
-            provider.on("network", (newNetwork, oldNetwork) => {
-                this.setState(() => ({
-                    validNetwork: newNetwork.chainId === requiredId
-                }));
-                if (newNetwork.chainId != requiredId) {
-                    toast.info("Wrong network detected! Please switch your network to  Eth mainnet")
-                }
-            });
+            // const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+            // provider.on("network", (newNetwork, oldNetwork) => {
+            //     this.setState(() => ({
+            //         validNetwork: newNetwork.chainId === requiredId
+            //     }));
+            //     if (newNetwork.chainId != requiredId) {
+            //         toast.info("Wrong network detected! Please switch your network to  Eth mainnet")
+            //     }
+            // });
         }
     }
     isMetamaskAvailable() {
@@ -87,13 +89,20 @@ export default class Mint extends Component {
         this.updateMintData()
     }
 
-    async connectWallet() {
-        if(!this.isMetamaskAvailable()){
-            toast.info("Please install metamask wallet")
+    async connectWallet(clicked) {
+        if (!this.isMetamaskAvailable()) {
+            if (clicked)
+                toast.info("Please install metamask wallet")
+
             return
         }
         try {
-            let provider = new ethers.providers.Web3Provider(window.ethereum)
+            const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+            provider.on("network", (newNetwork, oldNetwork) => {
+                this.setState(() => ({
+                    validNetwork: newNetwork.chainId === requiredId
+                }));
+            });
             let address = await provider.send("eth_requestAccounts", []);
             address = address.toString()
             this.signer = provider.getSigner()
@@ -102,7 +111,8 @@ export default class Mint extends Component {
                 walletAddress: address
             }));
             this.updateMintData()
-            toast.info("Wallet Connected")
+            if (clicked)
+                toast.info("Wallet Connected")
         } catch (e) {
             this.setState(() => ({
                 isLoading: false
@@ -110,8 +120,8 @@ export default class Mint extends Component {
         }
     }
     async updateMintData() {
-        if(!this.isMetamaskAvailable()){
-            return 
+        if (!this.isMetamaskAvailable()) {
+            return
         }
         try {
             let id = this.tokenId
@@ -140,7 +150,7 @@ export default class Mint extends Component {
         }
     }
     async mint() {
-        if(!this.isMetamaskAvailable()){
+        if (!this.isMetamaskAvailable()) {
             toast.info("Please install metamask wallet")
             return
         }
@@ -199,19 +209,27 @@ export default class Mint extends Component {
         this.setState(() => ({
             isLoading: true
         }));
+        if(!this.state.validNetwork){
+            toast.info("Wrong network detected! Please switch your network to  Eth mainnet")
+            this.connectWallet(true)
+            return
+        }
         if (this.state.walletAddress) {
             this.mint()
         }
         else {
-            this.connectWallet()
+            this.connectWallet(true)
         }
-
+    }
+    componentDidMount() {
+        this.connectWallet(false)
     }
     render() {
         return <div>
+            <Banner />
             <Header2 />
             {/* <div className="section full-height height-auto-lg  hide-over background-dark-blue-3"> */}
-            <div className="section full-height height-auto-lg  ">
+            <div className="section full-height height-auto-lg  " id='mint'>
                 <div className="hero-center-wrap relative-on-lg">
                     <div className="container">
 
@@ -233,11 +251,9 @@ export default class Mint extends Component {
                                     </div>
                                 </Carousel>
                             </div>
-                            <div className="col-lg-6 text-center text-lg-left parallax-fade-top align-self-center z-bigger">
-                                <h2 style={{ 'fontFamily': "marvel" }} className="text-white">Connect your wallet and mint</h2>
+                            <div className="col-lg-6 text-center text-lg-left  align-self-center z-bigger">
+                                <h2 style={{ 'fontSize': "50px" }} className="text-white">Connect your wallet and mint</h2>
                                 <br />
-
-
                                 <p className="text-white">Select the NFT you want : </p>
                                 <div>
                                     <button className={this.state.b1} onClick={() => { !this.state.isLoading && this.onClick(1); }}>Tier 1</button>
@@ -254,7 +270,7 @@ export default class Mint extends Component {
                                     <Button
                                         style={{ "fontSize": "20px", "margin": "0px" }}
                                         variant="success"
-                                        disabled={!this.state.validNetwork || (this.state.isLoading || this.state.mintsLeft <= 0)}
+                                        disabled={(this.state.isLoading || this.state.mintsLeft <= 0)}
                                         onClick={!this.state.isLoading ? () => { this.handleClick() } : null}
                                     >
                                         {this.state.isLoading ? (this.state.walletAddress && !this.state.isUpdate ? 'Minting...' : "Loading...") : this.state.walletAddress ? <div>Mint</div> : <div>Connect</div>}
@@ -269,6 +285,7 @@ export default class Mint extends Component {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     }
 }

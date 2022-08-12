@@ -99,6 +99,7 @@ mark{
 
 .section {
     position: relative;
+	margin-top: 120px;
 	width: 100%;
 	display: block;
 }
@@ -109,12 +110,33 @@ mark{
 	overflow: hidden;
 }
 .full-height {
-	height: 165vh;
+	height: 170vh;
 }
+#concept{
+	margin-top: 10px;
+}
+#register , #mint , #presale{
+	margin-top: 10%;
+	background-color: #160021;
+	height: auto;
+}
+
 @media only screen and (max-width: 600px) {
+	#register , #mint , #presale{
+		position: relative !important;
+		top: 0px !important;
+   }
 	.full-height {
-		height: 100vh;
 		padding-bottom: 0px  !important;
+	}
+	.section{
+		margin-top: 0px;
+	}
+	#platformImg{
+		margin-top: 72px !important;
+	}
+	.padding-top-bottom-big{
+		padding-top: 42px  !important;
 	}
 }
 .half-height {
@@ -251,7 +273,7 @@ mark{
 	padding-bottom: 80px;
 }
 .padding-top-bottom-big {
-	padding-top: 110px;
+	
 	padding-bottom: 110px;
 }
 .padding-top-big {
@@ -330,7 +352,8 @@ mark{
 	width:100%;
 	z-index:5000;
 	margin:0 auto;
-	top:0;
+	margin-top: 40px;
+	top: 0;
 	left:0;
 	background-color: black;
 }
@@ -654,13 +677,9 @@ mark{
 }
 
 .hero-center-wrap{
-	position: absolute;
 	width: 100%;
-	top: 35%;
 	left: 0;
 	z-index:2;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
 }
 #landPageFirst{
 	top: 50% !important;
@@ -781,8 +800,6 @@ mark{
 	border: none !important;
 	box-shadow: none !important;
 	outline: none !important;
-}
-.btn-primary{
 }
 
 .hide-over {
@@ -941,7 +958,7 @@ mark{
 	background: -webkit-linear-gradient(transparent, transparent),
              url('../img/let.jpg') repeat;
 	background: -o-linear-gradient(transparent, transparent);
-	-webkit-background-clip: text;
+	background-clip: text;
 	background-position:center center;
 	background-size:cover;
 	text-shadow: 1px 4px 3px rgba(0,0,0,0.06);
@@ -1957,8 +1974,6 @@ input.btn.btn-primary{
 		vertical-align: middle;
 	}
 	#menu-wrap{
-		position: relative;
-		top: auto;
 		left: auto;
 	}
 	.menu-back{
@@ -2034,7 +2049,7 @@ input.btn.btn-primary{
 	}
 	.full-height.height-auto-lg	{
 		height: auto;
-		padding-top: 80px;
+		
 		padding-bottom: 180px;
 	}
 	.hero-center-wrap.relative-on-lg{
@@ -2222,8 +2237,14 @@ input.btn.btn-primary{
     i {
         padding: 0.8rem
     }
+	
 }
-
+@media(max-width:600px) {
+	.faqq{
+		margin-top: 120px;
+		padding-bottom: 50px;
+	}
+}
 .carousel-control-prev {
     justify-content: flex-start
 }
@@ -2237,12 +2258,17 @@ input.btn.btn-primary{
     transition: none;
     opacity: unset
 }
-
-
-
-
-
-
+.fa-opensea{
+	height: 18px;
+	position: relative;
+	top: 2px;
+	content: url('../images/opensea1.png');
+}
+.fa-discord{
+	position: relative;
+	top: 2px;
+	height: 18px;
+}
 
 
 

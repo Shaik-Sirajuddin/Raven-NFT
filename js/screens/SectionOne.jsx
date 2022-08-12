@@ -8,7 +8,7 @@ export default class SectionOne extends Component {
             <div className="hero-center-wrap relative-on-lg">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-6 text-center text-lg-left parallax-fade-top align-self-center z-bigger">
+                        <div className="col-lg-6 text-center text-lg-left align-self-center z-bigger">
                             <h2 className="text-white">Join Us On Our <br />Sci-Fi Adventure!</h2>
                             <p className="mt-3 mb-4 pb-3 font-weight-normal text-white">1500 Cyber Heros living on the Solana blockchain</p>
                            

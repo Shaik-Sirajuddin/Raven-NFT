@@ -13,6 +13,7 @@ import { contractABI, contractAddress, requiredId } from '../other/config';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RegisterHeader from './RegisterHeader';
+import Banner from './banner';
 
 toast.configure();
 const moment = require('moment');
@@ -22,22 +23,12 @@ export default class Register extends React.Component {
         super(props);
         this.state = {
             loading: false,
-            validNetwork: true,
+            validNetwork: false,
             code: '',
             walletAddress: '',
             alertId: StatusAlertService.showSuccess('Default success alert!')
         };
-        if (this.isMetamaskAvailable()) {
-            const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
-            provider.on("network", (newNetwork, oldNetwork) => {
-                this.setState(() => ({
-                    validNetwork: newNetwork.chainId === requiredId
-                }));
-                if (newNetwork.chainId != requiredId) {
-                    toast.info("Wrong network detected! Please switch your network to  Eth mainnet")
-                }
-            });
-        }
+       
     }
 
 
@@ -70,11 +61,25 @@ export default class Register extends React.Component {
     sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
+    connectWallet(){
+        if (this.isMetamaskAvailable()) {
+            const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+            provider.on("network", (newNetwork, oldNetwork) => {
+                this.setState(() => ({
+                    validNetwork: newNetwork.chainId === requiredId
+                }));
+                if (newNetwork.chainId != requiredId) {
+                    toast.info("Wrong network detected! Please switch your network to  Eth mainnet")
+                }
+            });
+        }
+    }
     async savePresale() {
         if(!this.isMetamaskAvailable()){
             toast.info("Please install metamask wallet")
             return
         }
+        this.connectWallet()
         try {
             let { code, walletAddress } = this.state;
             walletAddress = walletAddress.trim()
@@ -128,13 +133,13 @@ export default class Register extends React.Component {
 
         const { email, walletAddress } = this.state;
         return (<div>
-
+            <Banner/>
             <RegisterHeader />
-            <div className="section full-height height-auto-lg hide-over bg-d- ">
+            <div className=" full-height height-auto-lg hide-over bg-d- " id='register'>
                 <div className="hero-center-wrap relative-on-lg">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-6 text-center text-lg-left parallax-fade-top align-self-center z-bigger">
+                            <div className="col-lg-6 text-center text-lg-left align-self-center z-bigger">
 
                                 <br />
 

@@ -11,7 +11,8 @@ export default class SectionTwo extends Component {
                         <div className="title-wrap text-center">
                             <div className="back-title" style={{"color":"white"}}>concept</div>
                             <h3 className="text-white">What is Raven NFT?</h3>
-                            <p className="" style={{"textAlign":"left"}}>Raven NFT is the first Decentralized Real Estate Organization curated with the intent to own and operate on land, both commercial and Residential, purchased Throughout Arizona and Ultimately the entire United States. We aim to deliver unparalleled utility both metaversaly and in person. Ultimately, the end goal of Raven NFT and the purpose for why we are doing what we are doing is to build facilities across the United States dedicated to caring for, rehabilitating, and putting an end to homelessness.</p>
+                            <br/>
+                            <p className="" style={{"textAlign":"left"}}>Raven NFT is the first Decentralized Real Estate Organization curated with the intent to own and operate on land, both commercial and Residential, purchased Throughout Arizona and Ultimately the entire United States. We aim to deliver unparalleled utility both Metaversally and in person. Ultimately, the end goal of Raven NFT and the purpose for why we are doing what we are doing is to build facilities across the United States dedicated to caring for, rehabilitating, and putting an end to homelessness.</p>
                         </div>
                     </div>
              
@@ -37,10 +38,7 @@ Once every other month, holders will have the opportunity to have their business
                         <div className="concept-box">
                             <img className="mb-4" src="img/3.svg" alt=""/>
                             <h5 className="text-white">LifeTime Holder Payment Plan</h5>
-                            <p className="text-grey" style={{"textAlign":"left"}}>About 6 - 8 months After Mintout, Raven NFT will begin paying holders residually for as long as they hold raven NFT. The Rate and Quantity at which holders will be paid is dependent on the Tier and quantity of Raven NFTs owned. For example, If you hold a Tier 3 token you may be payed 1,200 Dollars Monthly for as long as you are a holder whereas a Tier 1 token Holder may receive 500 Dollars monthly for as long as they are a holder. Additionally, If you hold more than just one token your monthly earnings will be adjusted according to the quantity of Raven Tokens held as well as their tiers. An official Formula depicting the precise monthly payment that takes into account quantity and the tier of a holder's Raven NFT token will be developed shortly after mint out.
-
-Holders will also gain early access and discounted prices to all mints associated and connected to Raven NFT.
-
+                            <p className="text-grey" style={{"textAlign":"left"}}>About 6 - 8 months After Mintout, Raven NFT will begin paying holders residually for as long as they hold raven NFT. The Rate and Quantity at which holders will be paid is dependent on the Tier and quantity of Raven NFTs owned and as the wealth of the company grows, so will the payment amount that will be distributed to holders. For example, If you hold a Tier 3 token you may be distributed 1,200 Dollars Monthly for as long as you are a holder whereas a Tier 1 token Holder may receive 500 Dollars monthly for as long as they are a holder. Additionally, If you hold more than just one token your monthly earnings will be adjusted according to the quantity of Raven Tokens held as well as their tiers. An official Formula depicting the precise monthly payment that takes into account quantity and the tier of a holder's Raven NFT token will be developed shortly after mint out. Holders will also gain early access and discounted prices to all mints associated and connected to Raven NFT.
 </p>
                         </div>
                     </div>

@@ -6,6 +6,8 @@ import { ethers } from 'ethers';
 import { contractABI, contractAddress, requiredId } from '../other/config';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Banner from './banner';
+import Footer from './Footer';
 toast.configure();
 
 export default class Presale extends Component {
@@ -35,17 +37,7 @@ export default class Presale extends Component {
             isPresaleUser: false,
             validNetwork: true
         }
-        if (this.isMetamaskAvailable()) {
-            const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
-            provider.on("network", (newNetwork, oldNetwork) => {
-                this.setState(() => ({
-                    validNetwork: newNetwork.chainId === requiredId
-                }));
-                if (newNetwork.chainId != requiredId) {
-                    toast.info("Wrong network detected! Please switch your network to  Eth mainnet")
-                }
-            });
-        }
+
 
     }
     isMetamaskAvailable() {
@@ -108,13 +100,19 @@ export default class Presale extends Component {
         this.updateMintData()
     }
 
-    async connectWallet() {
+    async connectWallet(clicked) {
         if (!this.isMetamaskAvailable()) {
-            toast.info("Please install metamask wallet")
+            if (clicked)
+                toast.info("Please install metamask wallet")
             return
         }
         try {
-            let provider = new ethers.providers.Web3Provider(window.ethereum)
+            let provider = new ethers.providers.Web3Provider(window.ethereum,"any")
+            provider.on("network", (newNetwork, oldNetwork) => {
+                this.setState(() => ({
+                    validNetwork: newNetwork.chainId === requiredId
+                }));
+            });
             let address = await provider.send("eth_requestAccounts", []);
             address = address.toString()
             this.signer = provider.getSigner()
@@ -124,7 +122,8 @@ export default class Presale extends Component {
             }));
             this.updateMintData()
             this.checkPresale()
-            toast.info("Wallet Connected")
+            if (clicked)
+                toast.info("Wallet Connected")
         } catch (e) {
             this.setState(() => ({
                 isLoading: false
@@ -163,6 +162,7 @@ export default class Presale extends Component {
     }
     async mint() {
         if (!this.isMetamaskAvailable()) {
+
             toast.info("Please install metamask wallet")
             return
         }
@@ -199,7 +199,6 @@ export default class Presale extends Component {
     }
     async checkPresale() {
         if (!this.isMetamaskAvailable()) {
-
             return
         }
         this.setState(() => ({
@@ -236,19 +235,27 @@ export default class Presale extends Component {
         this.setState(() => ({
             isLoading: true
         }));
+        if(!this.state.validNetwork){
+            toast.info("Wrong network detected! Please switch your network to  Eth mainnet")
+            this.connectWallet(true)
+            return 
+        }
         if (this.state.walletAddress) {
             this.mint()
         }
         else {
-            this.connectWallet()
+            this.connectWallet(true)
         }
-
+    }
+    componentDidMount() {
+        this.connectWallet(false)
     }
     render() {
         return <div>
+            <Banner />
             <Header />
             {/* <div className="section full-height height-auto-lg  hide-over background-dark-blue-3"> */}
-            <div className="section full-height height-auto-lg  ">
+            <div className="section full-height height-auto-lg  " id='presale'>
                 <div className="hero-center-wrap relative-on-lg">
                     <div className="container">
 
@@ -270,8 +277,8 @@ export default class Presale extends Component {
                                     </div>
                                 </Carousel>
                             </div>
-                            <div className="col-lg-6 text-center text-lg-left parallax-fade-top align-self-center z-bigger">
-                                <h2 style={{ 'fontFamily': "marvel" }} className="text-white">Connect your wallet and mint</h2>
+                            <div className="col-lg-6 text-center text-lg-left align-self-center z-bigger">
+                                <h2 className="text-white" style={{ "fontSize": "50px" }}>Connect your wallet and mint</h2>
                                 <br />
 
 
@@ -291,7 +298,7 @@ export default class Presale extends Component {
                                     <Button
                                         style={{ "fontSize": "20px", "margin": "0px" }}
                                         variant="success"
-                                        disabled={!this.state.validNetwork || (this.state.isLoading || this.state.mintsLeft <= 0) || (this.state.walletAddress && !this.state.isPresaleUser)}
+                                        disabled={(this.state.isLoading || this.state.mintsLeft <= 0)  || (this.state.walletAddress && !this.state.isPresaleUser) }
                                         onClick={!this.state.isLoading ? () => { this.handleClick() } : null}
                                     >
                                         {this.state.isLoading ? (this.state.walletAddress && !this.state.isUpdate ? 'Minting...' : "Loading...") : this.state.walletAddress ? <div>Mint</div> : <div>Connect</div>}
@@ -306,6 +313,7 @@ export default class Presale extends Component {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     }
 }
